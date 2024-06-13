@@ -15,9 +15,7 @@ public class HUD : MonoBehaviour
     void Update()
     {
         PlayerController pc = GameObject.Find("Man_Mesh").GetComponent<PlayerController>();
-        Debug.Log(pc);
         var elem =  GetComponent<TMPro.TMP_Text>();
-        Debug.Log(elem);
         elem.text = pc.health + " / " + pc.maxHealth;
     }
 }

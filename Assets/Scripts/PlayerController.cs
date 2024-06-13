@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
 
     public void Damage(int damage)
     {
+        Debug.Log("player: -" + damage);
+        if(lastDamageTaken + 0.5 >= Time.time)
+            return;
+
+Debug.Log("1");
         if (health - damage < 0)
         {
             health = 0;
@@ -39,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         this.lastDamageTaken = Time.time;
 
-        if (health < 0)
+        if (health <= 0)
         {
             OnDeath();
         }

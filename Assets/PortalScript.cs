@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PortalScript : MonoBehaviour
 {
-    public GameObject otherPortal;
+    public Transform targetPos;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -15,11 +16,22 @@ public class PortalScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        collision.gameObject.GetComponent<Transform>().position = otherPortal.GetComponent<Transform>().position;
+        CharacterController controller = collision.GetComponent<CharacterController>();
+        if (controller != null)
+        {
+            controller.enabled = false;
+        }
+
+        collision.transform.position = targetPos.position;
+        collision.transform.rotation = new Quaternion(targetPos.rotation.x, targetPos.rotation.y, targetPos.rotation.z, targetPos.rotation.w);
+
+        if (controller != null)
+        {
+            controller.enabled = true;
+        }
     }
 }

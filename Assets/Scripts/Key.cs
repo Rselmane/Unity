@@ -26,6 +26,7 @@ public class Key : MonoBehaviour
             if (!playerController.keys.Contains(id))
             {
                 playerController.keys.Add(id);
+                Object.Destroy(this.gameObject);
             }
         }  
     }

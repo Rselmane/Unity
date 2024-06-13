@@ -25,11 +25,7 @@ public class Door : MonoBehaviour
         {
             if (playerController.keys.Contains(id))
             {
-                this.GetComponentInChildren<BoxCollider>().enabled = false;
-            }
-            else
-            {
-                this.GetComponentInChildren<BoxCollider>().enabled = true;
+                Object.Destroy(gameObject);
             }
         }
     }

@@ -9,7 +9,7 @@ public class Startup : MonoBehaviour
     void Start()
     {
         GetComponent<AudioSource>().Play();
-        FindObjectOfType<FirstPersonController>().gameObject.SetActive(false);
+        GameObject.Find("Man_Mesh").GetComponent<FirstPersonController>().enabled = false;
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class Startup : MonoBehaviour
         AudioSource source = GetComponent<AudioSource>();
         if (!source.isPlaying)
         {
-            FindObjectOfType<FirstPersonController>().gameObject.SetActive(false);
+            GameObject.Find("Man_Mesh").GetComponent<FirstPersonController>().enabled = true;
             GameObject.Destroy(this);
         }
     }

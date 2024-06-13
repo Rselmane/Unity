@@ -15,7 +15,7 @@ public class CheatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("F5")) {
+        if(Input.GetKeyDown("f5")) {
             PlayerController pc = GameObject.Find("Man_Mesh").GetComponent<PlayerController>();
             pc.keys.Clear();
 

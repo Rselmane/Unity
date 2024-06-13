@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public int maxHealth;
     public float lastDamageTaken;
     public float regenCooldown;
+    public List<int> keys = new List<int>();
 
     // Start is called before the first frame update
     void Start()
